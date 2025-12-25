@@ -48,7 +48,7 @@ const Logo = ({ size = "md", showText = true }) => {
            
           `}
         >
-          Medicare
+          Medicare 
         </span>
       )}
     </Link>
