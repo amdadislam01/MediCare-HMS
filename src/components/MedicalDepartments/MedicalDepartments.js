@@ -42,7 +42,7 @@ const departments = [
 
 export default function MedicalDepartments() {
   return (
-    <section className="bg-gray-50 py-20 px-4">
+    <section className="bg-main py-20 px-4">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4 uppercase tracking-wider">
           OUR <span className='text-blue underline'>MEDICAL</span> DEPARTMENTS
@@ -56,7 +56,7 @@ export default function MedicalDepartments() {
         {departments.map((dept, i) => (
           <div
             key={i}
-            className="bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 group"
+            className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 group cursor-pointer"
           >
             <div className="relative h-72 overflow-hidden">
               <Image
@@ -64,7 +64,7 @@ export default function MedicalDepartments() {
                 alt={dept.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                className="object-cover transition-transform duration-600 group-hover:scale-110"
               />
 
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent">
