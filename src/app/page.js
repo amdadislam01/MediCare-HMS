@@ -3,10 +3,9 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="my-10">
+    <div className="">
       <HeroSection />
-
-      <p>Hello</p>
+      <MedicalDepartments />
     </div>
   );
 }
