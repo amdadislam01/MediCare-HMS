@@ -84,7 +84,7 @@ export default function MedicalDepartments() {
                 href="#"
                 className="inline-flex items-center gap-2 text-blue font-semibold text-lg transition-colors hover:underline"
               >
-                Read More <span className="text-xl"> <MoveRight size={20} /></span>
+                Read More <span className="text-xl"> <MoveRight size={22} /></span>
               </a>
             </div>
           </div>
