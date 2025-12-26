@@ -1,26 +1,112 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary */
+  --primary-color: #2563eb;
+  --primary-light: #dbeafe;
+  --primary-dark: #1e40af;
+
+  /* Secondary */
+  --secondary-color: #16a34a;
+  --secondary-light: #dcfce7;
+  --secondary-dark: #166534;
+
+  /* Background */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e5e7eb;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  /* Status */
+  --success-color: #16a34a;
+  --warning-color: #f59e0b;
+  --warning-light: #fef3c7;
+  --error-color: #dc2626;
+  --error-light: #fee2e2;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Backgrounds */
+  .bg-primary {
+    background-color: var(--primary-color);
+  }
+  .bg-primary-light {
+    background-color: var(--primary-light);
+  }
+  .bg-primary-dark {
+    background-color: var(--primary-dark);
+  }
+
+  .bg-secondary {
+    background-color: var(--secondary-color);
+  }
+  .bg-secondary-light {
+    background-color: var(--secondary-light);
+  }
+  .bg-secondary-dark {
+    background-color: var(--secondary-dark);
+  }
+
+  .bg-main {
+    background-color: var(--bg-main);
+  }
+  .bg-card {
+    background-color: var(--bg-card);
+  }
+
+  /* Text Colors */
+  .text-primary {
+    color: var(--text-primary);
+  }
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  .text-muted {
+    color: var(--text-muted);
+  }
+  .text-blue {
+    color: var(--primary-color);
+  }
+
+  /* Borders */
+  .border-default {
+    border-color: var(--border-color);
+  }
+
+  /* Status */
+  .text-success {
+    color: var(--success-color);
+  }
+  .bg-success {
+    background-color: var(--success-color);
+  }
+
+  .text-warning {
+    color: var(--warning-color);
+  }
+  .bg-warning {
+    background-color: var(--warning-light);
+  }
+
+  .text-error {
+    color: var(--error-color);
+  }
+  .bg-error {
+    background-color: var(--error-light);
+  }
 }
