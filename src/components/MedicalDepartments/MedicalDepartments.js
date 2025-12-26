@@ -56,7 +56,7 @@ export default function MedicalDepartments() {
         {departments.map((dept, i) => (
           <div
             key={i}
-            className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 group cursor-pointer"
+            className="bg-main rounded-xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 group cursor-pointer"
           >
             <div className="relative h-72 overflow-hidden">
               <Image
