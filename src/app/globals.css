@@ -58,6 +58,7 @@ body {
   /* Text Colors */
   .text-primary { color: var(--text-primary); }
   .text-secondary { color: var(--text-secondary); }
+  .text-blue { color: var(--primary-color); }
   .text-muted { color: var(--text-muted); }
 
   /* Borders */
