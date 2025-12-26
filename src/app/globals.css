@@ -111,3 +111,37 @@ body {
     background-color: var(--error-light);
   }
 }
+
+
+@layer utilities {
+  /* Backgrounds */
+  .bg-primary { background-color: var(--primary-color); }
+  .bg-primary-light { background-color: var(--primary-light); }
+  .bg-primary-dark { background-color: var(--primary-dark); }
+
+  .bg-secondary { background-color: var(--secondary-color); }
+  .bg-secondary-light { background-color: var(--secondary-light); }
+  .bg-secondary-dark { background-color: var(--secondary-dark); }
+
+  .bg-main { background-color: var(--bg-main); }
+  .bg-card { background-color: var(--bg-card); }
+
+  /* Text Colors */
+  .text-primary { color: var(--text-primary); }
+  .text-secondary { color: var(--text-secondary); }
+  .text-blue {color: var(--primary-color);}
+  .text-muted { color: var(--text-muted); }
+
+  /* Borders */
+  .border-default { border-color: var(--border-color); }
+
+  /* Status */
+  .text-success { color: var(--success-color); }
+  .bg-success { background-color: var(--success-color); }
+
+  .text-warning { color: var(--warning-color); }
+  .bg-warning { background-color: var(--warning-light); }
+
+  .text-error { color: var(--error-color); }
+  .bg-error { background-color: var(--error-light); }
+}

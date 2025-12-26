@@ -1,3 +1,13 @@
+
+import Services from "./components/Servieces";
+
+
+
+export default function Home() {
+  return (
+<div>
+  <Services></Services>
+</div>
 import HeroSection from '@/components/HomePage/HeroSection/HeroSection';
 import Image from 'next/image';
 
