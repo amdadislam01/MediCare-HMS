@@ -1,4 +1,5 @@
 import AboutUs from "@/components/AboutUs/AboutUs";
+import Blog from "@/components/Blog/Blog";
 import HeroSection from "@/components/HomePage/HeroSection/HeroSection";
 import MedicalDepartments from "@/components/MedicalDepartments/MedicalDepartments";
 import Services from "@/components/Services/Services";
@@ -14,6 +15,7 @@ export default function Home() {
       <Services />
       <WhyChooseUs />
       <Specialties />
+      <Blog />
     </div>
   );
 }

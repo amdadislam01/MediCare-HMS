@@ -10,34 +10,33 @@ const WhyChooseUs = () => {
   const faqs = [
     {
       id: 1,
-      question:
-        "What makes our Hospital Management System different from others?",
+      question: "What makes our Hospital Management System different?",
       answer:
-        "We provide personalized healthcare with advanced technology, ensuring top-quality treatment by expert professionals. Our system features role-based dashboards, secure JWT authentication, and comprehensive patient management across all departments.",
+        "We provide personalized healthcare using advanced technology, role-based dashboards, secure JWT authentication, and complete patient management.",
     },
     {
       id: 2,
-      question: "How does our system ensure service quality?",
+      question: "How does the system ensure service quality?",
       answer:
-        "Our HMS follows enterprise-level development standards with clean code practices, modular architecture, and rigorous testing. We implement role-based access control, data validation, and maintain scalability for medium to large hospitals with multiple departments.",
+        "Enterprise-level architecture, clean code practices, RBAC, validation, and scalable design for medium to large hospitals.",
     },
     {
       id: 3,
-      question: "Is the Hospital Management System available 24/7?",
+      question: "Is the system available 24/7?",
       answer:
-        "Yes, our system provides 24/7 availability with continuous access to patient records, appointment scheduling, pharmacy management, and billing operations.",
+        "Yes, patient records, appointments, pharmacy, and billing are accessible 24/7.",
     },
     {
       id: 4,
-      question: "What services does our HMS provide?",
+      question: "What services does the HMS provide?",
       answer:
-        "Patient registration, doctor appointments, prescriptions, pharmacy inventory, billing, analytics dashboards, and full medical history management.",
+        "Patient registration, appointments, prescriptions, pharmacy, billing, analytics, and medical history management.",
     },
     {
       id: 5,
-      question: "How does our system protect patient data?",
+      question: "How is patient data protected?",
       answer:
-        "We use bcrypt password hashing, JWT authentication, RBAC, secure APIs, and strict validation to ensure patient privacy.",
+        "bcrypt password hashing, JWT authentication, RBAC, secure APIs, and strict data validation.",
     },
     {
       id: 6,
@@ -52,68 +51,67 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-16 md:py-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            WHY{" "}
-            <span className="text-blue underline decoration-blue-600">
-              CHOOSE
-            </span>{" "}
-            US
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Why <span className="text-blue-600 underline">Choose Us</span>
           </h2>
-          <p className="text-secondary max-w-3xl mx-auto text-lg">
-            At our Hospital Management System, we provide personalized,
-            high-quality healthcare with advanced technology and 24/7 support.
+          <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg">
+            We deliver high-quality healthcare solutions powered by modern
+            technology and reliable 24/7 support.
           </p>
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* IMAGE */}
-          <div className="rounded-xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-105">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          
+          {/* Image */}
+          <div className="relative w-full h-[250px] sm:h-[350px] lg:h-[420px] rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/hospital.png"
-              alt="Hospital"
-              width={550}
-              height={400}
-              className="object-cover rounded-xl"
+              alt="Hospital Management System"
+              fill
+              className="object-cover"
               priority
             />
           </div>
 
           {/* FAQ */}
-          <div className="">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={faq.id}
-                className={`rounded-xl shadow-sm transition-transform duration-300 hover:scale-[1.01] ${
-                  index !== faqs.length - 1 ? "mb-4" : ""
-                }`}
+                className="bg-white rounded-xl shadow hover:shadow-md transition"
               >
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className={`w-full flex justify-between items-center p-5 text-left transition-colors duration-300 ${
-                    openIndex === index
-                      ? "bg-blue-50"
-                      : "bg-white hover:bg-blue-50"
-                  }`}
+                  aria-expanded={openIndex === index}
+                  className="w-full flex justify-between items-center p-4 sm:p-5 text-left"
                 >
-                  <span className="font-medium text-primary">
+                  <span className="font-semibold text-gray-800 text-sm sm:text-base">
                     {faq.question}
                   </span>
-                  {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+                  <span className="text-blue-600">
+                    {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+                  </span>
                 </button>
 
-                {openIndex === index && (
-                  <div className="p-5 text-secondary">
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    openIndex === index ? "max-h-40 p-4 sm:p-5 pt-0" : "max-h-0"
+                  }`}
+                >
+                  <p className="text-gray-600 text-sm sm:text-base">
                     {faq.answer}
-                  </div>
-                )}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
