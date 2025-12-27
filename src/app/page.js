@@ -1,23 +1,25 @@
+import AboutUs from "@/components/AboutUs/AboutUs";
+import BlogCard from "@/components/Blog/BlogCard";
+import HeroSection from "@/components/HomePage/HeroSection/HeroSection";
+import MedicalDepartments from "@/components/MedicalDepartments/MedicalDepartments";
+import Services from "@/components/Services/Services";
+import Specialties from "@/components/Specialties/Specialties";
+import WhyChooseUs from "@/components/WhyChooseUs/WhyChooseUs";
 
-import BlogCard from "@/components/BlogCard.jsx";
-import Services from "../components/Servieces.jsx";
 
 
 
-export default function Home() {
-  return (
-<div>
-  <Services></Services>
-  <BlogCard></BlogCard>
-</div>
-import HeroSection from '../components/HomePage/HeroSection/HeroSection.jsx';
-import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className="">
       <HeroSection />
+      <AboutUs />
       <MedicalDepartments />
+      <Services />
+      <WhyChooseUs />
+      <Specialties />
+      <BlogCard></BlogCard>
     </div>
   );
 }

@@ -36,7 +36,7 @@ export default function BlogCard() {
     <section className="max-w-7xl mx-auto px-6 py-16">
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-900">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           BLOGS <span className="text-blue">& NEWS</span>
         </h2>
         <p className="text-gray-600 mt-3">
