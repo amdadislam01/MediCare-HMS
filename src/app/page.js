@@ -10,7 +10,7 @@ export default function Home() {
   <Services></Services>
   <BlogCard></BlogCard>
 </div>
-import HeroSection from '@/components/HomePage/HeroSection/HeroSection';
+import HeroSection from '../components/HomePage/HeroSection/HeroSection.jsx';
 import Image from 'next/image';
 
 export default function Home() {
