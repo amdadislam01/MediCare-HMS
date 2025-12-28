@@ -8,6 +8,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 const DoctorSpecialists = () => {
   const specialists = [
@@ -51,14 +52,17 @@ const DoctorSpecialists = () => {
 
   return (
     <section className="py-10 md:py-16 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 relative">
+      <div className="max-w-7xl mx-auto px-4 md:px-0 relative">
         {/* Title Section */}
         <div className="mb-10 text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-black uppercase tracking-tight">
-            OUR <span className="text-primary">EXPERT</span> DOCTORS
+          <h2 className="text-2xl md:text-4xl font-extrabold text-primary uppercase tracking-tight">
+            OUR EXPERT{" "}
+            <span className="text-blue underline underline-offset-4">
+              DOCTORS
+            </span>
           </h2>
-          <div className="h-1 w-16 md:w-20 bg-primary mx-auto my-4 rounded-full"></div>
-          <p className="text-secondary text-sm md:text-base leading-relaxed">
+
+          <p className="text-secondary text-sm md:text-base leading-relaxed pt-4">
             Meet our highly skilled team of expert doctors, dedicated to
             providing top-quality medical care.
           </p>
@@ -69,7 +73,7 @@ const DoctorSpecialists = () => {
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={20}
-            slidesPerView={1.2} // Mobile view: shows 1 full card and part of the next
+            slidesPerView={1} // Mobile view: shows 1 full card and part of the next
             loop={true} // Infinite loop: prevents jumping back to start
             autoplay={{
               delay: 3000,
@@ -92,15 +96,16 @@ const DoctorSpecialists = () => {
                 spaceBetween: 24,
               },
             }}
-            className="pb-12 px-2! sm:px-0!"
+            className="pb-12 px-2!"
           >
             {specialists.map((doc) => (
               <SwiperSlide key={doc.id}>
                 <div className="group relative bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full">
                   {/* Image Container */}
-                  <div className="aspect-3/4 overflow-hidden bg-gray-100 relative">
-                    <img
+                  <div className="aspect-3/3 overflow-hidden bg-gray-100 relative">
+                    <Image
                       src={doc.img}
+                      fill
                       alt={doc.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -128,11 +133,13 @@ const DoctorSpecialists = () => {
           </Swiper>
 
           {/* Custom Navigation Arrows: Hidden on mobile for better UX */}
-          <button className="hidden sm:flex swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border border-gray-200 rounded-full items-center justify-center text-primary shadow-md hover:bg-primary hover:text-white transition-all focus:outline-none">
-            ❮
+          {/* Common classes handle size, positioning, and transitions */}
+          <button className="hidden sm:flex swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2  w-10 h-10 border border-gray-300 rounded-full items-center justify-center  hover:shadow-md   transition-all duration-300 cursor-pointer ">
+            <span className="text-xl ">❮</span>
           </button>
-          <button className="hidden sm:flex swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white border border-gray-200 rounded-full items-center justify-center text-primary shadow-md hover:bg-primary hover:text-white transition-all focus:outline-none">
-            ❯
+
+          <button className="hidden sm:flex swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2  w-10 h-10 border border-gray-300 rounded-full items-center justify-center  hover:shadow-md   transition-all duration-300 cursor-pointer ">
+            <span className="text-xl ">❯</span>
           </button>
         </div>
       </div>
