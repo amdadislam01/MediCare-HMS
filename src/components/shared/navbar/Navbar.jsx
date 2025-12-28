@@ -95,16 +95,16 @@ export default function Navbar() {
             </div>
 
             {/* Nav Links  */}
-            <div className="hidden lg:flex items-center space-x-5">
+            <div className="hidden lg:flex items-center space-x-6">
               <NavLink href={"/"}>
                 {" "}
                 <Home className="w-4 " /> Home
               </NavLink>
-              <NavLink href={"#about"}>
+              <NavLink href={"/about"}>
                 {" "}
-                <Info className="w-4 " /> About
+                <Info className="w-4 " /> About Us
               </NavLink>
-              <NavLink href={"#contact"}>
+              <NavLink href={"/contact"}>
                 <Phone className="w-4" /> Contact
               </NavLink>
             </div>
@@ -147,10 +147,10 @@ export default function Navbar() {
           <SideNavLink href="/" onClick={closeDrawer}>
             Home
           </SideNavLink>
-          <SideNavLink href="#about" onClick={closeDrawer}>
-            About
+          <SideNavLink href="/about" onClick={closeDrawer}>
+            About Us
           </SideNavLink>
-          <SideNavLink href="#contact" onClick={closeDrawer}>
+          <SideNavLink href="/contact" onClick={closeDrawer}>
             Contact
           </SideNavLink>
         </div>
