@@ -1,5 +1,6 @@
 import AboutUs from "@/components/AboutUs/AboutUs";
 import Blog from "@/components/Blog/Blog";
+import DoctorSpecialists from "@/components/DoctorSpecialist/DoctorSpecialists";
 import CommonHealthConcerns from "@/components/HealthConcerns/CommonHealthConcerns";
 import HeroSection from "@/components/HomePage/HeroSection/HeroSection";
 import MedicalDepartments from "@/components/MedicalDepartments/MedicalDepartments";
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutUs />
       <MedicalDepartments />
       <Services />
+      <DoctorSpecialists/>
       <WhyChooseUs />
       <Specialties />
       <Blog />

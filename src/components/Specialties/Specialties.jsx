@@ -11,6 +11,7 @@ import {
   Eye,
   FlaskConical,
   HeartPulse,
+  MoveRight,
   Ribbon,
   Sun,
 } from "lucide-react";
@@ -134,9 +135,9 @@ const Specialties = () => {
         <Link
           href="/services"
           className="px-6 py-3 bg-primary text-white font-semibold rounded-md flex items-center gap-2 transition cursor-pointer relative overflow-hidden group"
-        >
-          <span className="relative transition-all group-hover:ml-0 ml-3 duration-300 group-hover:-translate-x-2.5">
-            See All Specialities
+        ><MoveRight />
+          <span className="relative transition-all group-hover:ml-2 ml-3 duration-300 group-hover:-translate-x-2.5">
+             See All Specialities
           </span>
         </Link>
       </motion.div>
