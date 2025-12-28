@@ -62,56 +62,56 @@ const Services = () => {
   ];
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-2">
-      <div>
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-            OUR{" "}
-            <span className="text-blue underline decoration-blue-600">
-              HIGH QUALITY
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Heading */}
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our{" "}
+            <span className="text-blue-600 underline underline-offset-4">
+              High Quality
             </span>{" "}
-            SERVICES
+            Services
           </h2>
-          <p className="text-secondary max-w-3xl mx-auto text-lg">
-            We are privileged to work with hundreds of future-thinking medical
-            industries, ensuring the best services for patients.
+          <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg">
+            We work with future-focused medical departments to ensure world-class
+            patient care and advanced healthcare solutions.
           </p>
         </div>
 
-        {/* Service Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service) => (
             <div
               key={service.id}
-              className="relative p-6 rounded-xl shadow-md bg-main group overflow-hidden cursor-pointer transition"
+              className="group relative bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden"
             >
-              {/* Background Image */}
+              {/* Hover Background */}
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition duration-500 z-0"
+                className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition duration-500"
                 style={{ backgroundImage: "url('/services.jpg')" }}
-              ></div>
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-[#0E82FD] opacity-0 group-hover:opacity-70 transition duration-500 z-10"></div>
+              />
+              <div className="absolute inset-0 bg-blue-600/80 opacity-0 group-hover:opacity-100 transition duration-500" />
 
               {/* Content */}
-              <div className="relative z-20">
-                <div className="text-3xl text-blue-600 group-hover:text-white transition-colors duration-500">
+              <div className="relative z-10">
+                <div className="text-3xl sm:text-4xl text-blue-600 group-hover:text-white transition mb-4">
                   {service.icon}
                 </div>
 
-                <h3 className="text-xl font-bold mt-4 text-[#3c3c3c] group-hover:text-white transition-colors duration-500">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 group-hover:text-white transition">
                   {service.name}
                 </h3>
 
-                <p className="text-sm mt-2 font-semibold text-[#3c3c3c] group-hover:text-white transition-colors duration-500">
+                <p className="text-sm sm:text-base text-gray-600 mt-2 group-hover:text-white transition">
                   {service.tips}
                 </p>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
