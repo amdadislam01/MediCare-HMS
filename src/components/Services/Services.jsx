@@ -92,7 +92,7 @@ const Services = () => {
                 className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-100 transition duration-500"
                 style={{ backgroundImage: "url('/services.jpg')" }}
               />
-              <div className="absolute inset-0 bg-blue-600/80 opacity-0 group-hover:opacity-100 transition duration-500" />
+              <div className="absolute inset-0 bg-blue-600/50 opacity-0 group-hover:opacity-100 transition duration-500" />
 
               {/* Content */}
               <div className="relative z-10">
