@@ -55,7 +55,7 @@ const DoctorSpecialists = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-0 relative">
         {/* Title Section */}
         <div className="mb-10 text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl md:text-4xl font-extrabold text-primary uppercase tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold text-primary uppercase tracking-tight">
             OUR EXPERT{" "}
             <span className="text-blue underline underline-offset-4">
               DOCTORS
@@ -132,7 +132,6 @@ const DoctorSpecialists = () => {
             ))}
           </Swiper>
 
-          {/* Custom Navigation Arrows: Hidden on mobile for better UX */}
           {/* Common classes handle size, positioning, and transitions */}
           <button className="hidden sm:flex swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2  w-10 h-10 border border-gray-300 rounded-full items-center justify-center  hover:shadow-md   transition-all duration-300 cursor-pointer ">
             <span className="text-xl ">❮</span>

@@ -16,10 +16,10 @@ export default function Home() {
       <MedicalDepartments />
       <Services />
       <DoctorSpecialists/>
+      <CommonHealthConcerns />
       <WhyChooseUs />
       <Specialties />
       <Blog />
-      <CommonHealthConcerns></CommonHealthConcerns>
     </div>
   );
 }
