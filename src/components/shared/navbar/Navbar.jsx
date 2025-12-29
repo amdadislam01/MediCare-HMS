@@ -1,19 +1,21 @@
 "use client";
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { Home, Info, Menu, Phone, X } from "lucide-react";
+import { Home, Info, Menu, Phone, X, LogOut } from "lucide-react";
 import NavLink from "./NavLink";
 import Logo from "../logo/Logo";
 import SideNavLink from "./SideNavLink";
 import LoginButton from "./LoginButton";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const drawerRef = useRef(null);
   const [showImage, setShowImage] = useState(true);
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -21,6 +23,11 @@ export default function Navbar() {
 
   const closeDrawer = () => {
     setIsDrawerOpen(false);
+  };
+
+  const handleLogout = async () => {
+    closeDrawer();
+    await signOut({ callbackUrl: "/" });
   };
 
   useEffect(() => {
@@ -153,6 +160,29 @@ export default function Navbar() {
           <SideNavLink href="/contact" onClick={closeDrawer}>
             Contact
           </SideNavLink>
+          
+          {/* Logout Button in Drawer (Mobile Only) */}
+          {session && (
+            <>
+              <div className="border-t border-gray-200 my-4"></div>
+              <button
+                onClick={handleLogout}
+                className="
+                  group relative flex items-center
+                  w-full px-5 py-3
+                  font-medium
+                  text-red-600
+                  hover:text-red-700
+                  hover:bg-red-50
+                  transition-all duration-200
+                  rounded-md
+                "
+              >
+                <LogOut className="w-4 h-4 mr-3" />
+                Logout
+              </button>
+            </>
+          )}
         </div>
       </div>
     </>
