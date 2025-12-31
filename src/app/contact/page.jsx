@@ -90,7 +90,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC]">
+    <div className="min-h-screen max-w-7xl bg-[#F8FAFC]">
       <Toaster 
         position="top-right"
         reverseOrder={false}
