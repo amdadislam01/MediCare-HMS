@@ -1,21 +1,19 @@
-"use client";
-import React from "react";
-import { useState, useEffect, useRef } from "react";
-import { Home, Info, Menu, Phone, X, LogOut } from "lucide-react";
-import NavLink from "./NavLink";
-import Logo from "../logo/Logo";
-import SideNavLink from "./SideNavLink";
-import LoginButton from "./LoginButton";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useSession, signOut } from "next-auth/react";
+'use client';
+import React from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { Home, Info, Menu, Phone, X, LogOut } from 'lucide-react';
+import NavLink from './NavLink';
+import Logo from '../logo/Logo';
+import SideNavLink from './SideNavLink';
+import LoginButton from './LoginButton';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const drawerRef = useRef(null);
   const [showImage, setShowImage] = useState(true);
   const pathname = usePathname();
-  const { data: session } = useSession();
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -25,13 +23,8 @@ export default function Navbar() {
     setIsDrawerOpen(false);
   };
 
-  const handleLogout = async () => {
-    closeDrawer();
-    await signOut({ callbackUrl: "/" });
-  };
-
   useEffect(() => {
-    const handleClickOutside = (e) => {
+    const handleClickOutside = e => {
       if (
         drawerRef.current &&
         !drawerRef.current.contains(e.target) &&
@@ -41,15 +34,15 @@ export default function Navbar() {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isDrawerOpen]);
 
   useEffect(() => {
     if (isDrawerOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = 'unset';
     }
   }, [isDrawerOpen]);
 
@@ -61,17 +54,17 @@ export default function Navbar() {
         setShowImage(false);
       }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <>
       <nav className="bg-primary-light shadow-md fixed w-full top-0 z-50">
-        {pathname === "/" && (
+        {pathname === '/' && (
           <div
             className={`w-full overflow-hidden transition-all duration-500 ease-in-out ${
-              showImage ? "max-h-15 opacity-100" : "max-h-0 opacity-0"
+              showImage ? 'max-h-15 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
             <Image
@@ -103,15 +96,15 @@ export default function Navbar() {
 
             {/* Nav Links  */}
             <div className="hidden lg:flex items-center space-x-6">
-              <NavLink href={"/"}>
-                {" "}
+              <NavLink href={'/'}>
+                {' '}
                 <Home className="w-4 " /> Home
               </NavLink>
-              <NavLink href={"/about"}>
-                {" "}
+              <NavLink href={'/about'}>
+                {' '}
                 <Info className="w-4 " /> About Us
               </NavLink>
-              <NavLink href={"/contact"}>
+              <NavLink href={'/contact'}>
                 <Phone className="w-4" /> Contact
               </NavLink>
             </div>
@@ -126,7 +119,7 @@ export default function Navbar() {
 
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 lg:hidden ${
-          isDrawerOpen ? "opacity-80 visible" : "opacity-0 invisible"
+          isDrawerOpen ? 'opacity-80 visible' : 'opacity-0 invisible'
         }`}
         onClick={closeDrawer}
       ></div>
@@ -135,7 +128,7 @@ export default function Navbar() {
       <div
         ref={drawerRef}
         className={`fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
-          isDrawerOpen ? "translate-x-0" : "-translate-x-full"
+          isDrawerOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="flex items-center justify-between p-3 border-b">
@@ -160,29 +153,6 @@ export default function Navbar() {
           <SideNavLink href="/contact" onClick={closeDrawer}>
             Contact
           </SideNavLink>
-          
-          {/* Logout Button in Drawer (Mobile Only) */}
-          {session && (
-            <>
-              <div className="border-t border-gray-200 my-4"></div>
-              <button
-                onClick={handleLogout}
-                className="
-                  group relative flex items-center
-                  w-full px-5 py-3
-                  font-medium
-                  text-red-600
-                  hover:text-red-700
-                  hover:bg-red-50
-                  transition-all duration-200
-                  rounded-md
-                "
-              >
-                <LogOut className="w-4 h-4 mr-3" />
-                Logout
-              </button>
-            </>
-          )}
         </div>
       </div>
     </>
