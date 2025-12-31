@@ -13,7 +13,6 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useState } from 'react';
 
 const ContactPage = () => {
-
   const [formData, setFormData] = useState({
     user_name: '',
     user_email: '',
@@ -52,7 +51,6 @@ const ContactPage = () => {
       color: "text-[#16A34A]"
     }
   ];
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -115,20 +113,22 @@ const ContactPage = () => {
         }}
       />
 
-      <div className="bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white py-20">
-        <div className="container mx-auto px-4">
+      {/* Full Width Blue Background Hero Section */}
+      <div className="w-full bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white py-20">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Contact Us
             </h1>
             <p className="text-lg md:text-xl text-blue-100">
-              Have questions? We'd love to hear from you. Send us a message and we will respond as soon as possible.
+              Have questions? We`d love to hear from you. Send us a message and we will respond as soon as possible.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
+      {/* Centered Content Section */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1 space-y-6">
             <div className="bg-white rounded-lg shadow-md p-6 border border-[#E5E7EB]">
