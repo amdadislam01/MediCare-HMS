@@ -188,7 +188,7 @@ export default function RegisterPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-card rounded-2xl shadow-xl p-6 sm:p-8 border border-border-color"
+            className="bg-card rounded-2xl shadow-xl p-6 sm:p-8"
           >
             {/* Desktop Header */}
             <div className="hidden lg:block mb-6">
@@ -224,7 +224,7 @@ export default function RegisterPage() {
                     onChange={handleInputChange}
                     placeholder="Enter your username"
                     required
-                    className="w-full pl-10 pr-4 py-3 border-2 border-border-color rounded-lg focus:border-primary focus:outline-none transition-colors text-text-primary bg-white"
+                    className="w-full pl-10 pr-4 py-3 border border-border-color rounded-lg focus:border-primary focus:outline-none transition-colors text-text-primary bg-white"
                     disabled={isLoading || isGoogleLoading}
                   />
                 </div>
@@ -245,7 +245,7 @@ export default function RegisterPage() {
                     onChange={handleInputChange}
                     placeholder="your@email.com"
                     required
-                    className="w-full pl-10 pr-4 py-3 border-2 border-border-color rounded-lg focus:border-primary focus:outline-none transition-colors text-text-primary bg-white"
+                    className="w-full pl-10 pr-4 py-3 border border-border-color rounded-lg focus:border-primary focus:outline-none transition-colors text-text-primary bg-white"
                     disabled={isLoading || isGoogleLoading}
                   />
                 </div>
@@ -266,7 +266,7 @@ export default function RegisterPage() {
                     onChange={handleInputChange}
                     placeholder="Enter your password"
                     required
-                    className="w-full pl-10 pr-12 py-3 border-2 border-border-color rounded-lg focus:border-primary focus:outline-none transition-colors text-text-primary bg-white"
+                    className="w-full pl-10 pr-12 py-3 border border-border-color rounded-lg focus:border-primary focus:outline-none transition-colors text-text-primary bg-white"
                     disabled={isLoading || isGoogleLoading}
                   />
                   <button
@@ -319,7 +319,7 @@ export default function RegisterPage() {
               whileTap={{ scale: 0.98 }}
               onClick={handleGoogleSignIn}
               disabled={isLoading || isGoogleLoading}
-              className="w-full flex items-center justify-center gap-3 px-6 py-3 rounded-lg bg-white border-2 border-border-color hover:border-primary transition-all duration-300 font-semibold text-text-primary shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-3 px-6 py-3 rounded-lg bg-white border-blue-500 border-2 hover:border-primary transition-all duration-300 font-semibold text-text-primary shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isGoogleLoading ? (
                 <>
@@ -385,7 +385,7 @@ export default function RegisterPage() {
             <div className="mt-6 text-center">
               <button
                 onClick={() => router.push("/")}
-                className="text-text-secondary hover:text-primary transition-colors text-sm flex items-center justify-center gap-2 mx-auto"
+                className="cursor-pointer text-blue-500 transition-colors text-sm flex items-center justify-center gap-2 mx-auto"
               >
                 <Home className="w-4 h-4" />
                 Back to Home
