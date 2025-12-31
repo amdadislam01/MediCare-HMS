@@ -1,0 +1,148 @@
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  Baby,
+  Bone,
+  Brain,
+  BrainCircuit,
+  ChevronLeft,
+  ChevronRight,
+  Eye,
+  FlaskConical,
+  HeartPulse,
+  MoveRight,
+  Ribbon,
+  Sun,
+} from "lucide-react";
+import { FaBaby, FaTooth, FaXRay } from "react-icons/fa";
+import Link from "next/link";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { useRef } from "react";
+
+const specialtiesData = [
+  { name: "Neurology", icon: <Brain size={40} /> },
+  { name: "Ophthalmology", icon: <Eye size={40} /> },
+  { name: "Orthopedic", icon: <Bone size={40} /> },
+  { name: "Cardiologist", icon: <HeartPulse size={40} /> },
+  { name: "Dentist", icon: <FaTooth size={40} /> },
+  { name: "Laboratory", icon: <FlaskConical size={40} /> },
+  { name: "Pediatrics", icon: <Baby size={40} /> },
+  { name: "Radiology", icon: <FaXRay size={40} /> },
+  { name: "Dermatology", icon: <Sun size={40} /> },
+  { name: "Psychiatry", icon: <BrainCircuit size={40} /> },
+  { name: "Oncology", icon: <Ribbon size={40} /> },
+  { name: "Gynecology", icon: <FaBaby size={40} /> },
+];
+
+const Specialties = () => {
+  const swiperRef = useRef(null);
+
+  const goPrev = () => swiperRef.current?.slidePrev();
+  const goNext = () => swiperRef.current?.slideNext();
+
+  return (
+    <motion.div
+      className="relative py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
+      {/* Header */}
+      <motion.div
+        className="flex flex-col md:flex-row justify-between items-center mb-8"
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl lg:text-4xl text-blue font-bold tracking-wider underline underline-offset-4">
+          Specialities
+        </h2>
+
+        {/* Nav Buttons */}
+        <motion.div
+          className="flex items-center gap-3 bg-white shadow-md px-3 py-2 rounded-full mt-4 md:mt-0"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <button
+            onClick={goPrev}
+            className="p-2 rounded-full bg-gray-100 hover:bg-blue-500 hover:text-white transition cursor-pointer"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={goNext}
+            className="p-2 rounded-full bg-gray-100 hover:bg-blue-500 hover:text-white transition cursor-pointer"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </motion.div>
+      </motion.div>
+
+      <Swiper
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        modules={[Navigation]}
+        spaceBetween={20}
+        slidesPerView={2}
+        loop={true}
+        breakpoints={{
+          640: { slidesPerView: 3 },
+          1024: { slidesPerView: 6 },
+        }}
+        className="mt-6"
+      >
+        {specialtiesData.map((item, index) => (
+          <SwiperSlide key={index}>
+            <motion.div
+              className="flex flex-col items-center w-full"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white   rounded-lg p-6 shadow-md transition-all duration-500  group cursor-pointer w-full">
+                <motion.div
+                  className="rounded-full p-4 text-blue bg-gray-100 inline-block transition-all duration-500 group-hover:bg-blue-500 group-hover:text-white group-hover:rotate-360"
+                  whileHover={{ transition: { duration: 0.6 } }}
+                >
+                  {item.icon}
+                </motion.div>
+                <p className="mt-4 font-semibold">{item.name}</p>
+              </div>
+            </motion.div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* See All Specialities Button */}
+      <motion.div
+        className="flex justify-center items-center mt-10"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <Link
+          href="/services"
+          className="px-6 py-3 bg-primary text-white font-semibold rounded-md flex items-center gap-2 transition cursor-pointer relative overflow-hidden group"
+        ><MoveRight />
+          <span className="relative transition-all group-hover:ml-2 ml-3 duration-300 group-hover:-translate-x-2.5">
+             See All Specialities
+          </span>
+        </Link>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+export default Specialties;
