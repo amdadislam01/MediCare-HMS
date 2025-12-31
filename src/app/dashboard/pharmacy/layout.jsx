@@ -40,7 +40,7 @@ export default function PharmacyDashboardLayout({ children }) {
   ];
 
   return (
-    <div className="min-h-screen bg-main">
+    <div className="min-h-screen bg-main  mx-auto">
       {/* for mobile  */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-card border-b border-default shadow-sm">
         <div className="flex items-center justify-between p-4">
@@ -111,7 +111,7 @@ export default function PharmacyDashboardLayout({ children }) {
         {isSidebarOpen && (
           <>
             <div
-              className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+              className="fixed inset-0  bg-opacity-50 z-40"
               onClick={() => setIsSidebarOpen(false)}
             ></div>
             <aside className="lg:hidden fixed left-0 top-16 bottom-0 w-64 bg-card z-50 shadow-xl">
@@ -135,9 +135,9 @@ export default function PharmacyDashboardLayout({ children }) {
           </>
         )}
 
-        <main className="flex-1 overflow-x-hidden">
-          <div className="hidden lg:block bg-card border-b border-default shadow-sm sticky top-0 z-30">
-            <div className="flex items-center justify-between p-6">
+        <main className="flex-1  mx-auto">
+          <div className="hidden lg:block sticky top-0 z-40 bg-card border-b border-default shadow-sm">
+            <div className="flex items-center justify-between p-[21.7px]">
               <div>
                 <h2 className="text-2xl font-bold text-primary">
                   Pharmacy Dashboard
@@ -152,6 +152,7 @@ export default function PharmacyDashboardLayout({ children }) {
                   <FaBell className="text-gray-600" size={20} />
                   <span className="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
                 </button>
+
                 <div className="flex items-center gap-3 px-4 py-2 bg-primary-light rounded-lg">
                   <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">
                     P
