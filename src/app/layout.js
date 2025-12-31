@@ -1,17 +1,17 @@
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
-import Navbar from '@/components/shared/navbar/Navbar';
-import Footer from '@/components/shared/footer/Footer';
-
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import DashboardLayout from "./DashboardLayout";
+// import Navbar from "@/components/shared/navbar/Navbar";
+// import Footer from "@/components/shared/footer/Footer"; //added DashboardLayout to hide navbar by tushar
 
 const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata = {
@@ -25,15 +25,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header >
+        {/* <header>
           <Navbar />
-        </header>
+        </header> */}
 
-        <main>{children}</main>
+        {/* <main>{children}</main> */}
+        <DashboardLayout>{children}</DashboardLayout>
 
-        <footer className="">
+        {/* <footer className="">
           <Footer />
-        </footer>
+        </footer> */}
       </body>
     </html>
   );
