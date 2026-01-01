@@ -419,7 +419,7 @@ export default function BedManagementPage() {
 
       {filteredBeds.length === 0 && (
         <div className="bg-card rounded-xl shadow-md p-12 border border-default text-center">
-          <p className="text-muted">No beds found matching your criteria</p>
+          <p className="text-muted">No beds found matching your wish</p>
         </div>
       )}
     </div>
