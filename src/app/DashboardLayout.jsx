@@ -7,7 +7,7 @@ import Footer from "@/components/shared/footer/Footer";
 export default function DashboardLayout({ children }) {
   const pathname = usePathname();
 
-  const hideNavbar = pathname.startsWith("/dashboard/pharmacy");
+  const hideNavbar = pathname.startsWith("/dashboard");
 
   return (
     <>
