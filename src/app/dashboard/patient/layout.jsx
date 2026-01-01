@@ -41,6 +41,11 @@ export default function PharmacyDashboardLayout({ children }) {
     },
     {
       icon: <FaCog />,
+      label: "Order History",
+      path: "/dashboard/patient/purchase-history",
+    },
+    {
+      icon: <FaCog />,
       label: "Settings",
       path: "/dashboard/patient/settings",
     },
