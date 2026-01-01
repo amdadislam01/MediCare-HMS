@@ -35,6 +35,11 @@ export default function PharmacyDashboardLayout({ children }) {
       path: "/dashboard/patient/favorite-doctors",
     },
     {
+      icon: <FaChartBar />,
+      label: "My Bed Request",
+      path: "/dashboard/patient/my-bedRequest",
+    },
+    {
       icon: <FaCog />,
       label: "Settings",
       path: "/dashboard/patient/settings",
