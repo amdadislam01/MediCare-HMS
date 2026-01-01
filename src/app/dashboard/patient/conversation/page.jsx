@@ -93,7 +93,7 @@ const Conversation = () => {
                 key={user.id}
                 onClick={() => setSelectedUser(user)}
                 className={`flex items-center gap-3 p-4 cursor-pointer border-b border-gray-50 transition-all ${
-                  selectedUser?.id === user.id ? "bg-blue-50 border-r-4 border-primary" : "hover:bg-gray-50"
+                  selectedUser?.id === user.id ? "bg-blue-100 border-r-4 border-primary" : "hover:bg-gray-50"
                 }`}
               >
                 <div className="relative shrink-0">

@@ -3,53 +3,49 @@ import { LucideLayoutDashboard } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import {
-  FaHome,
-  FaPills,
-  FaClipboardList,
-  FaChartBar,
-  FaCog,
   FaBars,
   FaBell,
   FaUser,
   FaFileMedical,
   FaBed,
   FaCartArrowDown,
-  
 } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { BiConversation } from "react-icons/bi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-
+import { usePathname } from "next/navigation";
 
 export default function PatientDashboardLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+  const pathname = usePathname();
   const menuItems = [
-    { icon: <LucideLayoutDashboard />, label: "Overview", path: "/dashboard/patient" },
     {
-      icon: <BiConversation />
-,
+      icon: <LucideLayoutDashboard />,
+      label: "Overview",
+      path: "/dashboard/patient",
+    },
+    {
+      icon: <BiConversation />,
       label: "Conversation",
       path: "/dashboard/patient/conversation",
     },
     {
-      icon: <FaFileMedical  />,
+      icon: <FaFileMedical />,
       label: "My Appointments",
       path: "/dashboard/patient/appointments",
     },
     {
-      icon: <FaUserDoctor />
-,
+      icon: <FaUserDoctor />,
       label: "My Favorite Doctor",
       path: "/dashboard/patient/favorite-doctors",
     },
     {
-      icon: <FaBed  />,
+      icon: <FaBed />,
       label: "My Bed Request",
       path: "/dashboard/patient/my-bedRequest",
     },
     {
-      icon: <FaCartArrowDown  />,
+      icon: <FaCartArrowDown />,
       label: "Order History",
       path: "/dashboard/patient/purchase-history",
     },
@@ -72,9 +68,7 @@ export default function PatientDashboardLayout({ children }) {
             >
               <FaBars size={20} />
             </button>
-            <h1 className="text-xl font-bold text-primary">
-              MediCare patient
-            </h1>
+            <h1 className="text-xl font-bold text-primary">MediCare patient</h1>
           </div>
 
           <div className="flex items-center gap-3">
@@ -101,19 +95,33 @@ export default function PatientDashboardLayout({ children }) {
           </div>
           <nav className="flex-1 p-4 overflow-y-auto">
             <ul className="space-y-2">
-              {menuItems.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    href={item.path}
-                    className="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-primary-light hover:text-primary rounded-lg transition-all duration-200 group"
-                  >
-                    <span className="text-xl group-hover:scale-110 transition-transform">
-                      {item.icon}
-                    </span>
-                    <span className="font-medium">{item.label}</span>
-                  </Link>
-                </li>
-              ))}
+            
+              {menuItems.map((item, index) => {
+                // Check if the current path matches the menu item path
+                const isActive = pathname === item.path;
+
+                return (
+                  <li key={index}>
+                    <Link
+                      href={item.path}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
+                        isActive
+                          ? "bg-blue-100 " // Background Blue-300 when selected
+                          : "text-secondary hover:bg-primary-light hover:text-primary"
+                      }`}
+                    >
+                      <span
+                        className={`text-xl transition-transform ${
+                          isActive ? "scale-110" : "group-hover:scale-110"
+                        }`}
+                      >
+                        {item.icon}
+                      </span>
+                      <span className="font-medium">{item.label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
           <div className="p-4 border-t border-default">
