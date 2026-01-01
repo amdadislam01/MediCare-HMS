@@ -9,7 +9,7 @@ import {
   FaTrashAlt, // Added for delete option
 } from "react-icons/fa";
 
-const PatientChat = () => {
+const Conversation = () => {
   const [selectedUser, setSelectedUser] = useState(null);
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState({});
@@ -322,4 +322,4 @@ const PatientChat = () => {
   );
 };
 
-export default PatientChat;
+export default Conversation;

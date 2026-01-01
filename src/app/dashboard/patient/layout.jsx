@@ -21,8 +21,8 @@ export default function PharmacyDashboardLayout({ children }) {
     { icon: <LucideLayoutDashboard />, label: "Overview", path: "/dashboard/patient" },
     {
       icon: <FaPills />,
-      label: "Patient Chat",
-      path: "/dashboard/patient/patient-chat",
+      label: "Conversation",
+      path: "/dashboard/patient/conversation",
     },
     {
       icon: <FaClipboardList />,
