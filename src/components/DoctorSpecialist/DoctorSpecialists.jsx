@@ -55,13 +55,8 @@ const DoctorSpecialists = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-0 relative">
         {/* Title Section */}
         <div className="mb-10 text-center max-w-2xl mx-auto">
-<<<<<<< HEAD
-          <h2 className="text-3xl md:text-5xl font-bold text-primary uppercase tracking-tight">
-            OUR EXPERT{" "}
-=======
           <h2 className="text-2xl md:text-4xl font-extrabold text-primary uppercase tracking-tight">
             OUR EXPERT{' '}
->>>>>>> 6482864336ac2831f3c5970a0e12b1c5d1a2da2b
             <span className="text-blue underline underline-offset-4">
               DOCTORS
             </span>
