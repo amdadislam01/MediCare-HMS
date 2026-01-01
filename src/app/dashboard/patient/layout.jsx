@@ -57,7 +57,7 @@ export default function PatientDashboardLayout({ children }) {
   ];
 
   return (
-    <div className="min-h-screen bg-main  mx-auto my-16">
+    <div className="min-h-screen bg-main  mx-auto">
       {/* for mobile  */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-card border-b border-default shadow-sm">
         <div className="flex items-center justify-between p-4">
