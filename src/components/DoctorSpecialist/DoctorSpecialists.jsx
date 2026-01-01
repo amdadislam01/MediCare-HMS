@@ -133,7 +133,6 @@ const DoctorSpecialists = () => {
             ))}
           </Swiper>
 
-          {/* Custom Navigation Arrows: Hidden on mobile for better UX */}
           {/* Common classes handle size, positioning, and transitions */}
           <button className="hidden sm:flex swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2  w-10 h-10 border border-gray-300 rounded-full items-center justify-center  hover:shadow-md   transition-all duration-300 cursor-pointer ">
             <span className="text-xl ">❮</span>
