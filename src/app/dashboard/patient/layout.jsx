@@ -31,8 +31,8 @@ export default function PharmacyDashboardLayout({ children }) {
     },
     {
       icon: <FaChartBar />,
-      label: "Analytics",
-      path: "/dashboard/patient/analytics",
+      label: "My Favorite Doctor",
+      path: "/dashboard/patient/favorite-doctors",
     },
     {
       icon: <FaCog />,
