@@ -12,7 +12,7 @@ const ManageCartPage = () => {
           <h2 className="text-xl font-bold text-[#1e293b] mb-6 text-left">Your order</h2>
           
           {/* Empty Cart Placeholder */}
-          <div className="border border-gray-100 rounded-lg p-10 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden">
+          <div className="border border-gray-100 rounded-lg p-10 flex flex-col items-center justify-center min-h-75 relative overflow-hidden">
              {/* Simple Illustration Placeholder */}
              <div className="w-48 h-32 bg-gray-50 rounded-lg flex items-center justify-center mb-4 relative">
                 <div className="absolute top-2 right-4 bg-pink-500 text-white text-[10px] px-2 py-0.5 rounded-full">0 Items</div>
