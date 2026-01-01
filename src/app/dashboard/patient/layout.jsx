@@ -26,8 +26,8 @@ export default function PharmacyDashboardLayout({ children }) {
     },
     {
       icon: <FaClipboardList />,
-      label: "Orders",
-      path: "/dashboard/patient/orders",
+      label: "My Appointments",
+      path: "/dashboard/patient/appointments",
     },
     {
       icon: <FaChartBar />,
