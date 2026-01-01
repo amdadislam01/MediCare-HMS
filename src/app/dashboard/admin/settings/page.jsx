@@ -13,10 +13,10 @@ import {
 } from "react-icons/fa";
 
 export default function AdminSettingsPage() {
-  const [pharmacyProfile, setPharmacyProfile] = useState({
-    name: "MediCare Pharmacy",
+  const [AdminProfile, setAdminProfile] = useState({
+    name: "MediCare Admin",
     license: "PH-2024-001234",
-    email: "pharmacy@medicare.com",
+    email: "Admin@medicare.com",
     phone: "+880 1712-345678",
     address: "123 Medical Road, Dhaka 1000",
     emergencyContact: "+880 1812-987654",
@@ -56,7 +56,7 @@ export default function AdminSettingsPage() {
 
   const handleProfileChange = (e) => {
     const { name, value } = e.target;
-    setPharmacyProfile((prev) => ({ ...prev, [name]: value }));
+    setAdminProfile((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleUserProfileChange = (e) => {
@@ -81,8 +81,8 @@ export default function AdminSettingsPage() {
   };
 
   const handleSaveProfile = () => {
-    console.log("Pharmacy Profile:", pharmacyProfile);
-    alert("Pharmacy profile updated successfully!");
+    console.log("Admin Profile:", AdminProfile);
+    alert("Admin profile updated successfully!");
   };
 
   const handleSaveHours = () => {
@@ -119,7 +119,7 @@ export default function AdminSettingsPage() {
       <div>
         <h1 className="text-3xl font-bold text-primary">Settings</h1>
         <p className="text-muted mt-1">
-          Manage your pharmacy settings and preferences
+          Manage your Admin settings and preferences
         </p>
       </div>
 
@@ -129,9 +129,9 @@ export default function AdminSettingsPage() {
             <FaStore className="text-2xl" />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-primary">Pharmacy Profile</h2>
+            <h2 className="text-xl font-bold text-primary">Admin Profile</h2>
             <p className="text-sm text-muted">
-              Basic information about your pharmacy
+              Basic information about your Admin
             </p>
           </div>
         </div>
@@ -139,12 +139,12 @@ export default function AdminSettingsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-semibold text-secondary mb-2">
-              Pharmacy Name <span className="text-error">*</span>
+              Admin Name <span className="text-error">*</span>
             </label>
             <input
               type="text"
               name="name"
-              value={pharmacyProfile.name}
+              value={AdminProfile.name}
               onChange={handleProfileChange}
               className="w-full px-4 py-3 border border-default rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -157,7 +157,7 @@ export default function AdminSettingsPage() {
             <input
               type="text"
               name="license"
-              value={pharmacyProfile.license}
+              value={AdminProfile.license}
               onChange={handleProfileChange}
               className="w-full px-4 py-3 border border-default rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -170,7 +170,7 @@ export default function AdminSettingsPage() {
             <input
               type="email"
               name="email"
-              value={pharmacyProfile.email}
+              value={AdminProfile.email}
               onChange={handleProfileChange}
               className="w-full px-4 py-3 border border-default rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -183,7 +183,7 @@ export default function AdminSettingsPage() {
             <input
               type="tel"
               name="phone"
-              value={pharmacyProfile.phone}
+              value={AdminProfile.phone}
               onChange={handleProfileChange}
               className="w-full px-4 py-3 border border-default rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -195,7 +195,7 @@ export default function AdminSettingsPage() {
             </label>
             <textarea
               name="address"
-              value={pharmacyProfile.address}
+              value={AdminProfile.address}
               onChange={handleProfileChange}
               rows={3}
               className="w-full px-4 py-3 border border-default rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none"
@@ -209,7 +209,7 @@ export default function AdminSettingsPage() {
             <input
               type="tel"
               name="emergencyContact"
-              value={pharmacyProfile.emergencyContact}
+              value={AdminProfile.emergencyContact}
               onChange={handleProfileChange}
               className="w-full px-4 py-3 border border-default rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -235,7 +235,7 @@ export default function AdminSettingsPage() {
           <div>
             <h2 className="text-xl font-bold text-primary">Operating Hours</h2>
             <p className="text-sm text-muted">
-              Set your pharmacy working hours
+              Set your Admin working hours
             </p>
           </div>
         </div>
