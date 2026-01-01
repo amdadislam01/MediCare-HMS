@@ -12,7 +12,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
-export default function PharmacySettingsPage() {
+export default function AdminSettingsPage() {
   const [pharmacyProfile, setPharmacyProfile] = useState({
     name: "MediCare Pharmacy",
     license: "PH-2024-001234",
@@ -43,7 +43,7 @@ export default function PharmacySettingsPage() {
 
   const [userProfile, setUserProfile] = useState({
     name: "Dr. Ahmed Hassan",
-    role: "Pharmacist",
+    role: "Admin",
     email: "ahmed@medicare.com",
     phone: "+880 1712-345678",
   });

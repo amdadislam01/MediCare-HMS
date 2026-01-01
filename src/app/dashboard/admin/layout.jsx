@@ -41,7 +41,7 @@ export default function AdminDashboardLayout({ children }) {
     {
       icon: <DollarSign />,
       label: "Total Sale",
-      path: "/dashboard/admin/sale",
+      path: "/dashboard/admin/pharmacysale",
     },
     {
       icon: <FaCog />,
