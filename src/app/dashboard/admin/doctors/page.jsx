@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Search, Filter, UserCog, Mail, Phone, MoreHorizontal, CheckCircle, Clock } from 'lucide-react';
 
 const DoctorManagement = () => {
-    // ডাক্তার, পেশেন্ট এবং ফার্মাসিস্টদের ডাটা
+    // doctors list
     const [users, setUsers] = useState([
         { id: 1, name: "Dr. Ariful Islam", email: "ariful@health.com", role: "Doctor", specialty: "Cardiologist", status: "Available", image: "https://i.pravatar.cc/150?u=1" },
         { id: 2, name: "Dr. Sarah Taylor", email: "sarah.t@health.com", role: "Doctor", specialty: "Neurologist", status: "On Leave", image: "https://i.pravatar.cc/150?u=2" },
@@ -16,12 +16,12 @@ const DoctorManagement = () => {
 
     const [searchTerm, setSearchTerm] = useState("");
 
-    // রোল আপডেট ফাংশন
+    // role update
     const handleRoleChange = (id, newRole) => {
         setUsers(users.map(user => user.id === id ? { ...user, role: newRole } : user));
     };
 
-    // সার্চ ফিল্টারিং
+    // search system
     const filteredUsers = users.filter(user => 
         user.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
         user.role.toLowerCase().includes(searchTerm.toLowerCase())
