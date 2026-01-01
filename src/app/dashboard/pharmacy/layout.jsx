@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import {
   FaHome,
   FaPills,
@@ -14,6 +15,7 @@ import {
 
 export default function PharmacyDashboardLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const pathname = usePathname();
 
   const menuItems = [
     { icon: <FaHome />, label: "Dashboard", path: "/dashboard/pharmacy" },
@@ -39,9 +41,15 @@ export default function PharmacyDashboardLayout({ children }) {
     },
   ];
 
+  const isActive = (path) => {
+    if (path === "/dashboard/pharmacy") {
+      return pathname === path;
+    }
+    return pathname.startsWith(path);
+  };
+
   return (
-    <div className="min-h-screen bg-main  mx-auto">
-      {/* for mobile  */}
+    <div className="min-h-screen bg-main mx-auto">
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-card border-b border-default shadow-sm">
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center gap-3">
@@ -69,9 +77,7 @@ export default function PharmacyDashboardLayout({ children }) {
       </div>
 
       <div className="flex pt-16 lg:pt-0">
-        {/* ddesktop sidebar  */}
         <aside className="hidden lg:flex lg:flex-col lg:w-64 bg-card border-r border-default h-screen sticky top-0">
-          {/* Logo */}
           <div className="p-6 border-b border-default">
             <Link href={"/"}>
               <h1 className="text-2xl font-bold text-primary">MediCare</h1>
@@ -84,7 +90,11 @@ export default function PharmacyDashboardLayout({ children }) {
                 <li key={index}>
                   <Link
                     href={item.path}
-                    className="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-primary-light hover:text-primary rounded-lg transition-all duration-200 group"
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
+                      isActive(item.path)
+                        ? "bg-primary text-white"
+                        : "text-secondary hover:bg-primary-light hover:text-primary"
+                    }`}
                   >
                     <span className="text-xl group-hover:scale-110 transition-transform">
                       {item.icon}
@@ -107,11 +117,10 @@ export default function PharmacyDashboardLayout({ children }) {
             </div>
           </div>
         </aside>
-        {/* sidebar mobile  */}
         {isSidebarOpen && (
           <>
             <div
-              className="fixed inset-0  bg-opacity-50 z-40"
+              className="fixed inset-0 bg-opacity-50 z-40"
               onClick={() => setIsSidebarOpen(false)}
             ></div>
             <aside className="lg:hidden fixed left-0 top-16 bottom-0 w-64 bg-card z-50 shadow-xl">
@@ -122,7 +131,11 @@ export default function PharmacyDashboardLayout({ children }) {
                       <Link
                         href={item.path}
                         onClick={() => setIsSidebarOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-primary-light hover:text-primary rounded-lg transition-all duration-200"
+                        className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                          isActive(item.path)
+                            ? "bg-primary text-white"
+                            : "text-secondary hover:bg-primary-light hover:text-primary"
+                        }`}
                       >
                         <span className="text-xl">{item.icon}</span>
                         <span className="font-medium">{item.label}</span>
@@ -135,7 +148,9 @@ export default function PharmacyDashboardLayout({ children }) {
           </>
         )}
 
-        <main className="flex-1  mx-auto">
+        {/* //main section  */}
+
+        <main className="flex-1 mx-auto">
           <div className="hidden lg:block sticky top-0 z-40 bg-card border-b border-default shadow-sm">
             <div className="flex items-center justify-between p-[21.7px]">
               <div>
