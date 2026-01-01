@@ -11,43 +11,52 @@ import {
   FaBars,
   FaBell,
   FaUser,
+  FaFileMedical,
+  FaBed,
+  FaCartArrowDown,
   
 } from "react-icons/fa";
+import { FaUserDoctor } from "react-icons/fa6";
+import { BiConversation } from "react-icons/bi";
+import { HiOutlineShoppingBag } from "react-icons/hi2";
 
-export default function PharmacyDashboardLayout({ children }) {
+
+export default function PatientDashboardLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const menuItems = [
     { icon: <LucideLayoutDashboard />, label: "Overview", path: "/dashboard/patient" },
     {
-      icon: <FaPills />,
+      icon: <BiConversation />
+,
       label: "Conversation",
       path: "/dashboard/patient/conversation",
     },
     {
-      icon: <FaClipboardList />,
+      icon: <FaFileMedical  />,
       label: "My Appointments",
       path: "/dashboard/patient/appointments",
     },
     {
-      icon: <FaChartBar />,
+      icon: <FaUserDoctor />
+,
       label: "My Favorite Doctor",
       path: "/dashboard/patient/favorite-doctors",
     },
     {
-      icon: <FaChartBar />,
+      icon: <FaBed  />,
       label: "My Bed Request",
       path: "/dashboard/patient/my-bedRequest",
     },
     {
-      icon: <FaCog />,
+      icon: <FaCartArrowDown  />,
       label: "Order History",
       path: "/dashboard/patient/purchase-history",
     },
     {
-      icon: <FaCog />,
-      label: "Settings",
-      path: "/dashboard/patient/settings",
+      icon: <HiOutlineShoppingBag />,
+      label: "Manage Cart",
+      path: "/dashboard/patient/manage-cart",
     },
   ];
 
@@ -64,7 +73,7 @@ export default function PharmacyDashboardLayout({ children }) {
               <FaBars size={20} />
             </button>
             <h1 className="text-xl font-bold text-primary">
-              MediCare Pharmacy
+              MediCare patient
             </h1>
           </div>
 
@@ -113,8 +122,8 @@ export default function PharmacyDashboardLayout({ children }) {
                 P
               </div>
               <div className="flex-1">
-                <p className="font-semibold text-sm text-primary">Pharmacist</p>
-                <p className="text-xs text-muted">pharmacy@medicare.com</p>
+                <p className="font-semibold text-sm text-primary">patient</p>
+                <p className="text-xs text-muted">patient@medicare.com</p>
               </div>
             </div>
           </div>
@@ -171,7 +180,7 @@ export default function PharmacyDashboardLayout({ children }) {
                   </div>
                   <div>
                     <p className="font-semibold text-sm text-primary">
-                      Pharmacist
+                      patient
                     </p>
                     <p className="text-xs text-muted">Online</p>
                   </div>
