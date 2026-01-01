@@ -269,7 +269,7 @@ export default function ReportsPage() {
           <p className="text-xl md:text-2xl font-bold">
             ৳{(dailySummary.revenue / 1000).toFixed(0)}K
           </p>
-          <p className="text-xs mt-1 opacity-90">Today's collection</p>
+          <p className="text-xs mt-1 opacity-90">Today`s collection</p>
         </div>
 
         <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl shadow-md p-4 text-white">
@@ -366,7 +366,7 @@ export default function ReportsPage() {
                 Top Performing Doctors
               </h3>
             </div>
-            <p className="text-xs md:text-sm text-muted mt-1">Based on today's performance</p>
+            <p className="text-xs md:text-sm text-muted mt-1">Based on today`s performance</p>
           </div>
           <div className="p-4 md:p-6 space-y-4">
             {topDoctors.map((doctor, index) => (
