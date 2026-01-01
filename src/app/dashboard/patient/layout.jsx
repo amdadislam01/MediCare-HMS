@@ -21,23 +21,23 @@ export default function PharmacyDashboardLayout({ children }) {
     { icon: <LucideLayoutDashboard />, label: "Overview", path: "/dashboard/patient" },
     {
       icon: <FaPills />,
-      label: "Medicines",
-      path: "/dashboard/pharmacy/medicines",
+      label: "Patient Chat",
+      path: "/dashboard/patient/patient-chat",
     },
     {
       icon: <FaClipboardList />,
       label: "Orders",
-      path: "/dashboard/pharmacy/orders",
+      path: "/dashboard/patient/orders",
     },
     {
       icon: <FaChartBar />,
       label: "Analytics",
-      path: "/dashboard/pharmacy/analytics",
+      path: "/dashboard/patient/analytics",
     },
     {
       icon: <FaCog />,
       label: "Settings",
-      path: "/dashboard/pharmacy/settings",
+      path: "/dashboard/patient/settings",
     },
   ];
 
