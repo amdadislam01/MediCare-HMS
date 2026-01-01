@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { LayoutDashboard, LogIn, LogOut } from 'lucide-react';
-import { useSession, signOut } from 'next-auth/react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { LayoutDashboard, LogIn, LogOut } from "lucide-react";
+import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const LoginButton = () => {
   const { data: session, status } = useSession();
@@ -13,21 +13,21 @@ const LoginButton = () => {
 
   const handleLogout = async () => {
     setIsOpen(false);
-    await signOut({ callbackUrl: '/' });
+    await signOut({ callbackUrl: "/" });
   };
 
   const handleMenuClick = () => {
     setIsOpen(false);
   };
 
-  if (status === 'loading') {
+  if (status === "loading") {
     return (
       <div className="w-24 h-10 bg-primary-light rounded-lg animate-pulse"></div>
     );
   }
 
   if (session) {
-    const userInitial = session.user?.name?.charAt(0)?.toUpperCase() || '?';
+    const userInitial = session.user?.name?.charAt(0)?.toUpperCase() || "?";
     return (
       <div className="relative">
         <button
@@ -57,7 +57,7 @@ const LoginButton = () => {
         {isOpen && (
           <div className="absolute right-0 mt-2 w-56 bg-card rounded-lg shadow-lg py-1 z-150 border border-default">
             <div className="p-4 text-primary font-medium border-b border-default">
-              {session.user?.name || session.user?.email || 'User'}
+              {session.user?.name || session.user?.email || "User"}
             </div>
             <Link
               href="/"
