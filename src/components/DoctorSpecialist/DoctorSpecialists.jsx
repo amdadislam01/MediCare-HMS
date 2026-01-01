@@ -1,52 +1,52 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import Image from "next/image";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import Image from 'next/image';
 
 const DoctorSpecialists = () => {
   const specialists = [
     {
       id: 1,
-      name: "Dr. Ayesha Rahman",
-      specialist: "Pediatrician",
-      img: "https://i.ibb.co.com/0yJB14Zm/Screenshot-2025-04-20-153743.png",
+      name: 'Dr. Ayesha Rahman',
+      specialist: 'Pediatrician',
+      img: 'https://i.ibb.co.com/0yJB14Zm/Screenshot-2025-04-20-153743.png',
     },
     {
       id: 2,
-      name: "Dr. Tanveer Ahmed",
-      specialist: "Orthopedic Surgeon",
-      img: "https://i.ibb.co.com/s9H9JxKw/Screenshot-2025-04-20-163041.png",
+      name: 'Dr. Tanveer Ahmed',
+      specialist: 'Orthopedic Surgeon',
+      img: 'https://i.ibb.co.com/s9H9JxKw/Screenshot-2025-04-20-163041.png',
     },
     {
       id: 3,
-      name: "Dr. James Wilson",
-      specialist: "Oncologist",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXSAt2UguS2Rjut9738K3fuq9_mxliS66aUg&s",
+      name: 'Dr. James Wilson',
+      specialist: 'Oncologist',
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXSAt2UguS2Rjut9738K3fuq9_mxliS66aUg&s',
     },
     {
       id: 4,
-      name: "Dr. Emily Brown",
-      specialist: "Dermatologist",
-      img: "https://i.ibb.co/F4M3hFY4/image.png",
+      name: 'Dr. Emily Brown',
+      specialist: 'Dermatologist',
+      img: 'https://i.ibb.co/F4M3hFY4/image.png',
     },
     {
       id: 5,
-      name: "Dr. Ariful Islam",
-      specialist: "Cardiologist",
-      img: "https://i.ibb.co.com/FbsX85Nn/image.png",
+      name: 'Dr. Ariful Islam',
+      specialist: 'Cardiologist',
+      img: 'https://i.ibb.co.com/FbsX85Nn/image.png',
     },
     {
       id: 6,
-      name: "Dr. Maria Sultana",
-      specialist: "Ophthalmologist",
-      img: "https://i.ibb.co.com/W4VzJHWD/Screenshot-2025-04-20-152458.png",
+      name: 'Dr. Maria Sultana',
+      specialist: 'Ophthalmologist',
+      img: 'https://i.ibb.co.com/W4VzJHWD/Screenshot-2025-04-20-152458.png',
     },
   ];
 
@@ -55,8 +55,13 @@ const DoctorSpecialists = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-0 relative">
         {/* Title Section */}
         <div className="mb-10 text-center max-w-2xl mx-auto">
+<<<<<<< HEAD
           <h2 className="text-3xl md:text-5xl font-bold text-primary uppercase tracking-tight">
             OUR EXPERT{" "}
+=======
+          <h2 className="text-2xl md:text-4xl font-extrabold text-primary uppercase tracking-tight">
+            OUR EXPERT{' '}
+>>>>>>> 6482864336ac2831f3c5970a0e12b1c5d1a2da2b
             <span className="text-blue underline underline-offset-4">
               DOCTORS
             </span>
@@ -81,8 +86,8 @@ const DoctorSpecialists = () => {
               pauseOnMouseEnter: true,
             }}
             navigation={{
-              nextEl: ".swiper-button-next-custom",
-              prevEl: ".swiper-button-prev-custom",
+              nextEl: '.swiper-button-next-custom',
+              prevEl: '.swiper-button-prev-custom',
             }}
             breakpoints={{
               // Tablet view: 2 cards
@@ -98,7 +103,7 @@ const DoctorSpecialists = () => {
             }}
             className="pb-12 px-2!"
           >
-            {specialists.map((doc) => (
+            {specialists.map(doc => (
               <SwiperSlide key={doc.id}>
                 <div className="group relative bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 h-full">
                   {/* Image Container */}
@@ -108,6 +113,7 @@ const DoctorSpecialists = () => {
                       fill
                       alt={doc.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      unoptimized // can delete this for production if images are optimized
                     />
 
                     {/* Hover Button: Visible on hover with animation */}
