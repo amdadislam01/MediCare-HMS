@@ -36,7 +36,7 @@ export default function AdminDashboardLayout({ children }) {
     {
       icon: <SiVirustotal />,
       label: "Total Role",
-      path: "/dashboard/admin/role",
+      path: "/dashboard/admin/totalrole",
     },
     {
       icon: <DollarSign />,
