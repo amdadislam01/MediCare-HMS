@@ -1,19 +1,22 @@
 'use client';
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
-import { Home, Info, Menu, Phone, X, LogOut } from 'lucide-react';
+import { Home, Info, Menu, Phone, X, LogOut, ShoppingCart, Pill } from 'lucide-react';
 import NavLink from './NavLink';
 import Logo from '../logo/Logo';
 import SideNavLink from './SideNavLink';
 import LoginButton from './LoginButton';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useCart } from '@/context/CartContext';
+import CartDrawer from '@/components/shared/cart/CartDrawer';
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const drawerRef = useRef(null);
   const [showImage, setShowImage] = useState(true);
   const pathname = usePathname();
+  const { cartCount, toggleCart } = useCart();
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -107,6 +110,23 @@ export default function Navbar() {
               <NavLink href={'/contact'}>
                 <Phone className="w-4" /> Contact
               </NavLink>
+              <NavLink href={'/pharmacy'}>
+                <div className="flex items-center gap-1">
+                  <Pill className='w-4' /><span>Pharmacy</span>
+                </div>
+              </NavLink>
+
+              <button
+                onClick={toggleCart}
+                className="relative p-2 text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                <ShoppingCart className="w-6 h-6" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
+              </button>
             </div>
 
             {/* login button */}
@@ -153,8 +173,12 @@ export default function Navbar() {
           <SideNavLink href="/contact" onClick={closeDrawer}>
             Contact
           </SideNavLink>
+          <SideNavLink href="/pharmacy" onClick={closeDrawer}>
+            Pharmacy
+          </SideNavLink>
         </div>
       </div>
+      <CartDrawer />
     </>
   );
 }

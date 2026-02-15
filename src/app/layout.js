@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import DashboardLayout from "./DashboardLayout";
 import SessionProvider from "@/components/providers/SessionProvider";
+import { CartProvider } from "@/context/CartContext";
 // import Navbar from "@/components/shared/navbar/Navbar";
 // import Footer from "@/components/shared/footer/Footer"; //added DashboardLayout to hide navbar by tushar
 
@@ -33,7 +34,9 @@ export default function RootLayout({ children }) {
 
         {/* <main>{children}</main> */}
         <SessionProvider>
-          <DashboardLayout>{children}</DashboardLayout>
+          <CartProvider>
+            <DashboardLayout>{children}</DashboardLayout>
+          </CartProvider>
         </SessionProvider>
 
         {/* <footer className="">
